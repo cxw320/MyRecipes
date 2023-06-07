@@ -11,7 +11,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.example.myrecipes.model.Recipe
 
-data class RecipeDiscoveryScreenState(
+data class RecipeDiscoveryUiState(
     val recipeList: List<Recipe> = listOf(
         Recipe(
             id = 1,
@@ -23,15 +23,16 @@ data class RecipeDiscoveryScreenState(
 )
 @Composable
 fun RecipeDiscoveryScreen(
-    recipeDiscoveryScreenState : RecipeDiscoveryScreenState
+    recipeDiscoveryUiState : RecipeDiscoveryUiState
 ) {
+
     Column {
         LazyVerticalGrid(
             modifier = Modifier
                 .padding(5.dp),
             columns = GridCells.Fixed(2)
         ) {
-            items(recipeDiscoveryScreenState.recipeList) { recipe ->
+            items(recipeDiscoveryUiState.recipeList) { recipe ->
                 RecipeCard(recipe = recipe)
             }
         }
@@ -42,7 +43,7 @@ fun RecipeDiscoveryScreen(
 @Composable
 fun RecipeDiscoveryScreenPreview() {
     RecipeDiscoveryScreen(
-        RecipeDiscoveryScreenState(
+        RecipeDiscoveryUiState(
            recipeList = listOf(
                 Recipe(
                     id = 1,
