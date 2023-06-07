@@ -21,19 +21,9 @@ import javax.inject.Inject
 @AndroidEntryPoint
 class MainActivity : ComponentActivity() {
 
-    @Inject
-    lateinit var spoonacularApi : SpoonacularApiService
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        //TESTING the api to make sure we didn't mess up *fingers crossed* =D !!!!
-        lifecycleScope.launch {
-            val recipeList = spoonacularApi.getRandomRecipes().body()?.recipes?.map {
-                mapToRecipeModel(it)
-            } ?: listOf(Recipe())
-            Log.d("Caroline","${recipeList[0]}")
-        }
         setContent {
             MyRecipesTheme {
                 // A surface container using the 'background' color from the theme
@@ -45,14 +35,6 @@ class MainActivity : ComponentActivity() {
                 }
             }
         }
-    }
-
-    fun mapToRecipeModel(response: RecipeDTO): Recipe {
-        return Recipe(
-            id = response.id,
-            title = response.title,
-            imageUrl = response.imageUrl
-        )
     }
 
 }
