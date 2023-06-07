@@ -11,15 +11,27 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.example.myrecipes.model.Recipe
 
+data class RecipeDiscoveryScreenState(
+    val recipeList: List<Recipe> = listOf(
+        Recipe(
+            id = 1,
+            title = "My Recipe",
+            imageUrl = "http://www.foodista.com/recipe/MMSZLRHM/pork-chops-with-garlic-cream",
+            summary = "A Recipe"
+        )
+    )
+)
 @Composable
-fun RecipeDiscoveryScreen() {
+fun RecipeDiscoveryScreen(
+    recipeDiscoveryScreenState : RecipeDiscoveryScreenState
+) {
     Column {
         LazyVerticalGrid(
             modifier = Modifier
                 .padding(5.dp),
             columns = GridCells.Fixed(2)
         ) {
-            items(recipeList) { recipe ->
+            items(recipeDiscoveryScreenState.recipeList) { recipe ->
                 RecipeCard(recipe = recipe)
             }
         }
@@ -29,7 +41,18 @@ fun RecipeDiscoveryScreen() {
 @Preview(showBackground = true)
 @Composable
 fun RecipeDiscoveryScreenPreview() {
-    RecipeDiscoveryScreen()
+    RecipeDiscoveryScreen(
+        RecipeDiscoveryScreenState(
+           recipeList = listOf(
+                Recipe(
+                    id = 1,
+                    title = "My Recipe Test Data",
+                    imageUrl = "http://www.foodista.com/recipe/MMSZLRHM/pork-chops-with-garlic-cream",
+                    summary = "A Recipe"
+                )
+            )
+        )
+    )
 }
 
 // Sample data to use before we implement API call!
