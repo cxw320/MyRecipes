@@ -23,14 +23,6 @@ class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        //Let's test that we can Log some data from the spoonacular api!
-        //If we did everything correctly, we should see the first item in the recipe list printed in our Logcat
-        lifecycleScope.launch{
-            val recipeList = SpoonacularApi.apiService.getRandomRecipes().body()?.recipes?.map {
-                mapToRecipeModel(it)
-            } ?: listOf(Recipe())
-            Log.d("Caroline","${recipeList[0]}")
-        }
         setContent {
             MyRecipesTheme {
                 // A surface container using the 'background' color from the theme
