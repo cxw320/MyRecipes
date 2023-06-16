@@ -1,6 +1,7 @@
 package com.example.myrecipes.repository
 
 import com.example.myrecipes.api.ApiService
+import com.example.myrecipes.api.SpoonacularApi
 import com.example.myrecipes.api.responsemodel.RecipeDTO
 import com.example.myrecipes.model.Recipe
 
@@ -21,5 +22,22 @@ class RecipeRepository(
             title = recipeDTO.title,
             imageUrl = recipeDTO.imageUrl
         )
+    }
+
+    //a static method to ensure this class is accessed as a singleton
+    companion object {
+        private var instance : RecipeRepository? = null
+
+        fun initialize(){
+            if (instance == null){
+                instance = RecipeRepository(SpoonacularApi.apiService)
+            }
+        }
+
+        fun get() : RecipeRepository {
+            return instance ?: throw IllegalStateException("")
+        }
+
+
     }
 }

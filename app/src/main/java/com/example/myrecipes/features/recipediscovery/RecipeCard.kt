@@ -1,4 +1,4 @@
-package com.example.myrecipes.screens.recipediscovery
+package com.example.myrecipes.features.recipediscovery
 
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.height
