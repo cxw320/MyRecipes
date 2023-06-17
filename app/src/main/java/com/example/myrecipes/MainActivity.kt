@@ -3,19 +3,19 @@ package com.example.myrecipes
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
+import androidx.activity.viewModels
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.ui.Modifier
-import com.example.myrecipes.api.responsemodel.RecipeDTO
-import com.example.myrecipes.model.Recipe
 import com.example.myrecipes.features.recipediscovery.RecipeDiscoveryScreen
+import com.example.myrecipes.features.recipediscovery.RecipeDiscoveryViewModel
 import com.example.myrecipes.ui.theme.MyRecipesTheme
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
+        
         setContent {
             MyRecipesTheme {
                 // A surface container using the 'background' color from the theme

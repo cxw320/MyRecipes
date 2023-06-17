@@ -29,7 +29,7 @@ fun RecipeDiscoveryScreen() {
 @Preview(showBackground = true)
 @Composable
 fun RecipeDiscoveryScreenPreview() {
-    RecipeDiscoveryScreen()
+    //
 }
 
 // Sample data to use before we implement API call!
