@@ -11,6 +11,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
+import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.lifecycle.viewmodel.compose.viewModel
 import com.example.myrecipes.model.Recipe
 
@@ -27,13 +28,19 @@ fun RecipeDiscoveryScreen(
     viewModel: RecipeDiscoveryViewModel = viewModel()
 ) {
 
-    val recipeDiscoveryUiState = viewModel.recipeDiscoveryUiState.collectAsState()
+    //"collectAsState" collects the latest value from Flow and convert it to Compose state (in a lifecycle aware way)
+    //Link: https://medium.com/androiddevelopers/consuming-flows-safely-in-jetpack-compose-cde014d0d5a3
+    val recipeDiscoveryUiState = viewModel.recipeDiscoveryUiState.collectAsStateWithLifecycle()
+
 
     Column {
+
+      //Adding this button to demonstrate how to reference a method from viewModel
       Button(onClick = { viewModel.getRandomRecipes() }) {
           Text("Refresh")
       }
-        LazyVerticalGrid(
+
+      LazyVerticalGrid(
             modifier = Modifier
                 .padding(5.dp),
             columns = GridCells.Fixed(2)
