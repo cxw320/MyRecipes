@@ -30,7 +30,7 @@ fun RecipeDiscoveryScreen(
     val recipeDiscoveryUiState = viewModel.recipeDiscoveryUiState.collectAsState()
 
     Column {
-      Button(onClick = viewModel::getRandomRecipes) {
+      Button(onClick = { viewModel.getRandomRecipes() }) {
           Text("Refresh")
       }
         LazyVerticalGrid(
