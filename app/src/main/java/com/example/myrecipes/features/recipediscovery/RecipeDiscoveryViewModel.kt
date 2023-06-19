@@ -24,16 +24,16 @@ class RecipeDiscoveryViewModel : ViewModel() {
     //-------Section 2: Methods that update state----------------------------------
 
     init {
+        getRandomRecipes()
+    }
+
+    fun getRandomRecipes() {
         viewModelScope.launch{
             _recipeDiscoveryUiState.value =
                 _recipeDiscoveryUiState.value.copy(
-                recipeList = getRandomRecipes()
-            )
+                    recipeList = RecipeRepository.getRandomRecipes()
+                )
         }
-    }
-
-    private suspend fun getRandomRecipes() : List<Recipe>{
-        return RecipeRepository.getRandomRecipes()
     }
 
 }
