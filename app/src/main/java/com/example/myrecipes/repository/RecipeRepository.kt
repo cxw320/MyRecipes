@@ -1,7 +1,5 @@
 package com.example.myrecipes.repository
 
-import android.content.Context
-import com.example.myrecipes.api.ApiService
 import com.example.myrecipes.api.SpoonacularApi
 import com.example.myrecipes.api.responsemodel.RecipeDTO
 import com.example.myrecipes.model.Recipe
