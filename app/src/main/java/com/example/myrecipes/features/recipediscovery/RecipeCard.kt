@@ -1,4 +1,4 @@
-package com.example.myrecipes.screens.recipediscovery
+package com.example.myrecipes.features.recipediscovery
 
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.height
@@ -33,7 +33,6 @@ fun RecipeCard(
             placeholder = painterResource(R.drawable.recipe_card_placeholder),
             contentDescription = "placeholder content description",
         )
-
         Text(
             text = recipe.title
         )
