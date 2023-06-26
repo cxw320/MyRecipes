@@ -13,7 +13,7 @@ import retrofit2.http.GET
 interface ApiService {
 
     @GET("random?number=20")
-    suspend fun getRandomRecipes(): Response<RecipeListResponse>
+    suspend fun getRandomRecipes(): RecipeListResponse
 
 }
 
