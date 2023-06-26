@@ -7,6 +7,6 @@ import com.squareup.moshi.JsonClass
 class RecipeDTO (
     val id : Long,
     @Json(name="title") val recipeName : String,
-    val imageUrl : String,
+    val imageUrl : String?,
     val summary : String
 )

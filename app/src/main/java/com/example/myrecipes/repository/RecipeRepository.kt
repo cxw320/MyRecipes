@@ -18,7 +18,7 @@ object RecipeRepository {
         return Recipe(
             id = recipeDTO.id,
             recipeName = recipeDTO.recipeName,
-            imageUrl = recipeDTO.imageUrl,
+            imageUrl = recipeDTO.imageUrl?:"",
             summary = recipeDTO.summary
         )
     }
