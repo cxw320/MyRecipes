@@ -9,16 +9,17 @@ import com.example.myrecipes.model.Recipe
 object RecipeRepository {
 
     suspend fun getRandomRecipes(): List<Recipe> {
-        return SpoonacularApi.apiService.getRandomRecipes().body()?.recipes?.map {
+        return SpoonacularApi.apiService.getRandomRecipes().recipes.map {
             mapToRecipe(it)
-        } ?: emptyList()
+        }
     }
 
     fun mapToRecipe(recipeDTO: RecipeDTO): Recipe {
         return Recipe(
             id = recipeDTO.id,
-            title = recipeDTO.title,
-            imageUrl = recipeDTO.imageUrl
+            recipeName = recipeDTO.recipeName,
+            imageUrl = recipeDTO.imageUrl,
+            summary = recipeDTO.summary
         )
     }
 }
