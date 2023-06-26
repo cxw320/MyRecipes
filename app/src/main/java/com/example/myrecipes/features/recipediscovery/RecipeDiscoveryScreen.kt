@@ -37,49 +37,49 @@ fun RecipeDiscoveryScreenPreview() {
 val recipeList: List<Recipe> = listOf(
     Recipe(
         id = 1,
-        title = "Farro With Mushrooms and Asparagus",
+        recipeName = "Farro With Mushrooms and Asparagus",
         imageUrl = "https://spoonacular.com/recipeImages/642605-556x370.jpg",
         summary = "Need a dairy free and vegetarian side dish? Farro With Mushrooms and Asparagus could be an excellent recipe to try."
     ),
     Recipe(
         id = 2,
-        title = "Savory Cheese Dill Scones",
+        recipeName = "Savory Cheese Dill Scones",
         imageUrl = "https://spoonacular.com/recipeImages/659463-556x370.jpg",
         summary = "The recipe Savory Cheese Dill Scones could satisfy your Scottish craving in roughly 45 minutes."
     ),
     Recipe(
         id = 3,
-        title = "Fresh Apple Cake with Caramel Sauce",
+        recipeName = "Fresh Apple Cake with Caramel Sauce",
         imageUrl = "https://spoonacular.com/recipeImages/643426-556x370.jpg",
         summary = "If you want to add more lacto ovo vegetarian recipes to your recipe box, Fresh Apple Cake With Caramel Sauce might be a recipe you should try."
     ),
     Recipe(
         id = 4,
-        title = "Savory Olive & Goat Cheese Palmiers",
+        recipeName = "Savory Olive & Goat Cheese Palmiers",
         imageUrl = "https://spoonacular.com/recipeImages/659479-556x370.jpg",
         summary = "Savory Olive & Goat Cheese Palmiers might be just the hor d'oeuvre you are searching for."
     ),
     Recipe(
         id = 5,
-        title = "Shortbread Lemon Bars",
+        recipeName = "Shortbread Lemon Bars",
         imageUrl = "https://spoonacular.com/recipeImages/1005367-556x370.jpg",
         summary = "Shortbread Lemon Bars requires about <b>1 hour and 10 minutes</b> from start to finish"
     ),
     Recipe(
         id = 6,
-        title = "Blueberry-Lavender Sauce and Ginger Snap Ice Cream Cups",
+        recipeName = "Blueberry-Lavender Sauce and Ginger Snap Ice Cream Cups",
         imageUrl = "https://spoonacular.com/recipeImages/635561-556x370.jpg",
         summary = "Blueberry-Lavender Sauce and Ginger Snap Ice Cream Cups requires about about 45 minutes from start to finish."
     ),
     Recipe(
         id = 7,
-        title = "Pesto & Yogurt Pasta",
+        recipeName = "Pesto & Yogurt Pasta",
         imageUrl = "https://spoonacular.com/recipeImages/655806-556x370.jpg",
         summary = "This pasta gets rave reviews from everyone who makes it!"
     ),
     Recipe(
         id = 8,
-        title = "Chicken, Kielbasa and Shrimp Paella",
+        recipeName = "Chicken, Kielbasa and Shrimp Paella",
         imageUrl = "https://spoonacular.com/recipeImages/641911-556x370.jpg",
         summary = "You can never have too many main course recipes, so give Easy Chicken, Kielbasa and Shrimp Paella a try. This gluten free, dairy free, and foodmap friendly recipe serves 8."
     )

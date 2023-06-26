@@ -35,7 +35,7 @@ fun RecipeCard(
             contentDescription = "placeholder content description",
         )
         Text(
-            text = recipe.title
+            text = recipe.recipeName
         )
     }
 }
