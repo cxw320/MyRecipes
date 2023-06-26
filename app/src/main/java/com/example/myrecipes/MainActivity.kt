@@ -44,7 +44,7 @@ class MainActivity : ComponentActivity() {
     fun mapToRecipeModel(response: RecipeDTO): Recipe {
         return Recipe(
             id = response.id,
-            title = response.title,
+            recipeName = response.recipeName,
             imageUrl = response.imageUrl,
             summary = response.summary
         )
