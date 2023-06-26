@@ -45,7 +45,7 @@ class MainActivity : ComponentActivity() {
         return Recipe(
             id = response.id,
             recipeName = response.recipeName,
-            imageUrl = response.imageUrl,
+            imageUrl = response.imageUrl?:"",
             summary = response.summary
         )
     }
