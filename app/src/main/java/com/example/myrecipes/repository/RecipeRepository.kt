@@ -6,7 +6,7 @@ import com.example.myrecipes.api.SpoonacularApi
 import com.example.myrecipes.api.responsemodel.RecipeDTO
 import com.example.myrecipes.model.Recipe
 
-object RecipeRepository {
+class RecipeRepository {
 
     suspend fun getRandomRecipes(): List<Recipe> {
         return SpoonacularApi.apiService.getRandomRecipes().recipes.map {
@@ -18,7 +18,7 @@ object RecipeRepository {
         return Recipe(
             id = recipeDTO.id,
             recipeName = recipeDTO.recipeName,
-            imageUrl = recipeDTO.imageUrl?:"",
+            imageUrl = recipeDTO.imageUrl ?: "",
             summary = recipeDTO.summary
         )
     }

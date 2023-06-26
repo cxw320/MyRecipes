@@ -44,6 +44,6 @@ fun RecipeCard(
 @Composable
 fun RecipeCardPreview() {
     RecipeCard(
-        Recipe(1,"Cinnamon Rolls","","Tasty rolls")
+        Recipe(1, "Cinnamon Rolls", "", "Tasty rolls")
     )
 }
