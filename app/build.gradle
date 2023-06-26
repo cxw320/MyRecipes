@@ -11,6 +11,7 @@ android {
     compileSdk 33
 
     defaultConfig {
+        buildConfigField "String", "SPOONACULAR_API_KEY", localProperties['spoonacularApiKey']
         applicationId "com.example.myrecipes"
         minSdk 24
         targetSdk 33
@@ -24,9 +25,6 @@ android {
     }
 
     buildTypes {
-        all{
-            buildConfigField "String", "SPOONACULAR_API_KEY", localProperties['spoonacularApiKey']
-        }
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
