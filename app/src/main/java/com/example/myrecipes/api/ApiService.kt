@@ -42,6 +42,7 @@ private val retrofit = Retrofit.Builder()
     .client(client)
     .build()
 
+//Creating this so I can access this in the main activity for my "test"
 object SpoonacularApi {
     val apiService: ApiService by lazy {
         retrofit.create(ApiService::class.java)
