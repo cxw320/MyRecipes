@@ -1,5 +1,6 @@
 package com.example.myrecipes.api.responsemodel
 
+import com.example.myrecipes.model.Recipe
 import com.squareup.moshi.Json
 import com.squareup.moshi.JsonClass
 
@@ -10,3 +11,11 @@ class RecipeDTO(
     val imageUrl: String?,
     val summary: String
 )
+fun RecipeDTO.mapToRecipe(): Recipe {
+    return Recipe(
+        id = this.id,
+        recipeName = this.recipeName,
+        imageUrl = this.imageUrl ?: "",
+        summary = this.summary
+    )
+}
