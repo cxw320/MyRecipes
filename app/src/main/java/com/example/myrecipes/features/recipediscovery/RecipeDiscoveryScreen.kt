@@ -14,13 +14,6 @@ import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.lifecycle.viewmodel.compose.viewModel
 import com.example.myrecipes.model.Recipe
 
-
-
-data class RecipeDiscoveryUiState(
-    val recipeList : List<Recipe> = emptyList()
-)
-
-
 @Composable
 fun RecipeDiscoveryScreen(
     //viewmodel is initialized here via compose viewmodel dependency (implementation "androidx.lifecycle:lifecycle-viewmodel-compose:2.6.1")
