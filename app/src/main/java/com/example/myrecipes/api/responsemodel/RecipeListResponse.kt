@@ -1,6 +1,6 @@
 package com.example.myrecipes.api.responsemodel
 
-import com.squareup.moshi.Json
+import RecipeDTO
 import com.squareup.moshi.JsonClass
 
 @JsonClass(generateAdapter = true)

@@ -1,5 +1,3 @@
-package com.example.myrecipes.api.responsemodel
-
 import com.example.myrecipes.model.Recipe
 import com.squareup.moshi.Json
 import com.squareup.moshi.JsonClass

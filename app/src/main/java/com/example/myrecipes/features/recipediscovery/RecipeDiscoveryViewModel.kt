@@ -1,9 +1,7 @@
 package com.example.myrecipes.features.recipediscovery
 
-
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.myrecipes.model.Recipe
 import com.example.myrecipes.repository.RecipeRepository
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
@@ -40,4 +38,3 @@ class RecipeDiscoveryViewModel : ViewModel() {
     }
 
 }
-
