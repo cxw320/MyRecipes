@@ -6,9 +6,12 @@ import com.example.myrecipes.api.responsemodel.RecipeDTO
 import com.example.myrecipes.api.responsemodel.mapToRecipe
 import com.example.myrecipes.model.Recipe
 import com.squareup.moshi.Moshi
+import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.launch
 import okhttp3.OkHttpClient
 import retrofit2.Retrofit
 import retrofit2.converter.moshi.MoshiConverterFactory
+import java.util.concurrent.Flow
 
 class RecipeRepository {
 
@@ -37,7 +40,6 @@ class RecipeRepository {
         .client(client)
         .build()
         .create(ApiService::class.java)
-
 
     // ------- METHODS FOR OUR VIEW MODELS TO USE TO RETRIEVE DATA ------- //
 

@@ -8,14 +8,14 @@ import com.squareup.moshi.JsonClass
 class RecipeDTO(
     val id: Long,
     @Json(name = "title") val recipeName: String,
-    val imageUrl: String?,
+    @Json(name = "image") val imageUrl: String?,
     val summary: String
 )
 fun RecipeDTO.mapToRecipe(): Recipe {
     return Recipe(
         id = this.id,
         recipeName = this.recipeName,
-        imageUrl = this.imageUrl ?: "",
+        imageUrl = this.imageUrl,
         summary = this.summary
     )
 }
