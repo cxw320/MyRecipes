@@ -16,7 +16,7 @@ import com.example.myrecipes.model.Recipe
 
 
 
-data class recipeDiscoveryUiState(
+data class RecipeDiscoveryUiState(
     val recipeList : List<Recipe> = emptyList()
 )
 

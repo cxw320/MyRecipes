@@ -16,10 +16,10 @@ class RecipeDiscoveryViewModel : ViewModel() {
     //-------Section 1: Ui Variables that expose state to your composables---------
 
     //Below is a variable you can update (private to this class)
-    private val _recipeDiscoveryUiState = MutableStateFlow(recipeDiscoveryUiState())
+    private val _recipeDiscoveryUiState = MutableStateFlow(RecipeDiscoveryUiState())
 
     //Below is an immutable version of this same variable that your composables have access to
-    val recipeDiscoveryUiState : StateFlow<recipeDiscoveryUiState> = _recipeDiscoveryUiState.asStateFlow()
+    val recipeDiscoveryUiState : StateFlow<RecipeDiscoveryUiState> = _recipeDiscoveryUiState.asStateFlow()
 
 
     //-------Section 2: Methods that update state----------------------------------
