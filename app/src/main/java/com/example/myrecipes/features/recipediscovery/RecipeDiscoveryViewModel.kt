@@ -12,6 +12,9 @@ import kotlinx.coroutines.launch
 
 class RecipeDiscoveryViewModel : ViewModel() {
 
+    //Instantiate your recipe repository dependency
+    private val recipeRepository = RecipeRepository()
+
     //-------Section 1: Ui Variables that expose state to your composables---------
 
     //Below is a variable you can update (private to this class)
@@ -31,7 +34,7 @@ class RecipeDiscoveryViewModel : ViewModel() {
         viewModelScope.launch{
             _recipeDiscoveryUiState.value =
                 _recipeDiscoveryUiState.value.copy(
-                    recipeList = RecipeRepository.getRandomRecipes()
+                    recipeList = recipeRepository.getRandomRecipes()
                 )
         }
     }
