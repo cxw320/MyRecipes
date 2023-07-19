@@ -14,16 +14,12 @@ import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.lifecycle.viewmodel.compose.viewModel
 import com.example.myrecipes.model.Recipe
 
-
-
 data class RecipeDiscoveryUiState(
-    val recipeList : List<Recipe> = emptyList()
+    val recipeList: List<Recipe> = emptyList()
 )
-
 
 @Composable
 fun RecipeDiscoveryScreen(
-    //viewmodel is initialized here via compose viewmodel dependency (implementation "androidx.lifecycle:lifecycle-viewmodel-compose:2.6.1")
     viewModel: RecipeDiscoveryViewModel = viewModel()
 ) {
 
@@ -31,15 +27,14 @@ fun RecipeDiscoveryScreen(
     //Link: https://medium.com/androiddevelopers/consuming-flows-safely-in-jetpack-compose-cde014d0d5a3
     val recipeDiscoveryUiState = viewModel.recipeDiscoveryUiState.collectAsStateWithLifecycle()
 
-
     Column {
 
-      //Adding this button to demonstrate how to reference a method from viewModel
-      Button(onClick = { viewModel.getRandomRecipes() }) {
-          Text("Refresh")
-      }
+        //Adding this button to demonstrate how to reference a method from viewModel
+        Button(onClick = { viewModel.getRandomRecipes() }) {
+            Text("Refresh")
+        }
 
-      LazyVerticalGrid(
+        LazyVerticalGrid(
             modifier = Modifier
                 .padding(5.dp),
             columns = GridCells.Fixed(2)

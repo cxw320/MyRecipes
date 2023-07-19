@@ -1,4 +1,4 @@
-package com.example.myrecipes.domain.repository
+package com.example.myrecipes
 
 import com.example.myrecipes.domain.MyRecipesRepository
 import com.example.myrecipes.model.Recipe
@@ -6,7 +6,6 @@ import kotlinx.coroutines.delay
 
 
 object FakeRepositoryImpl : MyRecipesRepository {
-
     override suspend fun getRandomRecipes(): List<Recipe> {
 
         // Generate fake recipes for testing

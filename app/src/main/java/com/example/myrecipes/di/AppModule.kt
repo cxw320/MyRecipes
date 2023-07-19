@@ -13,12 +13,20 @@ import okhttp3.OkHttpClient
 import retrofit2.Retrofit
 import retrofit2.converter.moshi.MoshiConverterFactory
 import javax.inject.Named
+import javax.inject.Singleton
+
+/**
+ * This class is responsible for providing dependencies to the DI graph
+ */
 
 @Module
 @InstallIn(SingletonComponent::class)
 object AppModule {
+
     // ----- INSTANTIATING RETROFIT INSTANCE ------- //
+
     @Provides //Adds the following method to the DI graph
+    @Singleton //This tells Hilt that this method should only be called once
     fun provideRetrofitService(): ApiService {
         val BASE_URL = "https://api.spoonacular.com/recipes/"
 
@@ -36,13 +44,17 @@ object AppModule {
                     Moshi.Builder().build()
                 )
             )
+            //You also have the option of passing in an OkHttpClient instance during initialization to customize behavior
+            //Customization includes: setting time-outs,enabling caching
+            //The other advantage is defining interceptors which can modify requests or responses
+            //In this case, we want to take advantage of an interceptor to add an api key to our request
             .client(client)
             .build()
             .create(ApiService::class.java)
     }
 
     @Provides
-    @Named("myRecipeRepositoryImpl") //This is a named binding
+    @Singleton //Redundant but good practice
     fun provideMyRecipeRepositoryImpl(recipeImpl: MyRecipesRepositoryImpl): MyRecipesRepository {
         return recipeImpl
     }

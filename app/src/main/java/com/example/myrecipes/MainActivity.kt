@@ -11,7 +11,7 @@ import com.example.myrecipes.features.recipediscovery.RecipeDiscoveryScreen
 import com.example.myrecipes.ui.theme.MyRecipesTheme
 import dagger.hilt.android.AndroidEntryPoint
 
-@AndroidEntryPoint
+@AndroidEntryPoint //Specifies this activity as the entry point for Hilt
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
